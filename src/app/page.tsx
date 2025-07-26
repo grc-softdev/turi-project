@@ -1,4 +1,6 @@
 'use client'
+import Footer from '@/components/layout/Footer'
+import Navbar from '@/components/layout/Navbar'
 import { useQuery } from '@tanstack/react-query'
 
 
@@ -16,10 +18,14 @@ export default function Home() {
   if (isError) return <p>error to search animes.</p>
 
   return (
+    <div>
+      <Navbar/>
     <ul>
       {animes.map((anime) => (
         <li key={anime.id}>{anime.attributes.titles.en_jp}</li>
       ))}
     </ul>
+    <Footer/>
+    </div>
   )
 }
