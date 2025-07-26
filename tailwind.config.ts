@@ -1,22 +1,19 @@
+import type { Config } from "tailwindcss";
 
-
-const config = {
-  content: {
-    files: [
-      "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-      "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-      "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-      "./src/utilities/**/*.{js,ts,jsx,tsx,mdx}",
-    ],
-    safelist: [
-      "text-blue", "bg-blue",
-      "text-strawberry", "bg-strawberry",
-      "text-royal", "bg-royal",
-      "text-coffee", "bg-coffee",
-      "text-lavander", "bg-lavander",
-      "text-grass", "bg-grass",
-    ],
-  },
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/utilities/**/*.{js,ts,jsx,tsx,mdx}",
+  ],safelist: [
+    "text-blue","bg-blue",
+    "text-strawberry", "bg-strawberry",
+    "text-royal", "bg-royal",
+    "text-coffee", "bg-coffee",
+    "text-lavander", "bg-lavander",
+    "text-grass", "bg-grass",
+  ],
   theme: {
     colors: {
       "bgcbody": "#EDF1F5",
@@ -66,7 +63,6 @@ const config = {
       fontFamily: {
         'roboto':['"Roboto"']
       },
-     
     },
   },
   plugins: [],

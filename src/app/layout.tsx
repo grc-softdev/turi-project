@@ -3,6 +3,7 @@ import { Overpass, Roboto } from "next/font/google";
 import "./globals.css";
 import QueryProvider from "./query-provider";
 import { AnimesProvider } from "@/context/AnimeContext";
+import Footer from "@/components/layout/Footer";
 
 const overpass = Overpass({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -20,16 +21,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <body
         className={`${overpass.className} ${roboto.className}`}
         style={{ backgroundColor: "#EDF1F5" }}
       >
-         <QueryProvider>
+        <QueryProvider>
           <AnimesProvider>
-        {children}
+            {children}
+            <Footer />
           </AnimesProvider>
         </QueryProvider>
       </body>

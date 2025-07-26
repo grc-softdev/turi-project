@@ -1,31 +1,19 @@
 'use client'
-import Footer from '@/components/layout/Footer'
-import Navbar from '@/components/layout/Navbar'
-import { useQuery } from '@tanstack/react-query'
+import AnimeContainer from "@/components/ui/AnimeContainer";
 
 
-export default function Home() {
-  const { data: animes, isLoading, isError } = useQuery({
-    queryKey: ['animes'],
-    queryFn: async () => {
-      const res = await fetch('https://kitsu.io/api/edge/anime')
-      const json = await res.json()
-      return json.data
-    }
-  })
+import Navbar from "@/components/layout/Navbar";
 
-  if (isLoading) return <p>loading...</p>
-  if (isError) return <p>error to search animes.</p>
-
+const Home = () => {
   return (
-    <div>
-      <Navbar/>
-    <ul>
-      {animes.map((anime) => (
-        <li key={anime.id}>{anime.attributes.titles.en_jp}</li>
-      ))}
-    </ul>
-    <Footer/>
-    </div>
-  )
-}
+      <>
+        <Navbar />
+     
+
+        <AnimeContainer/>
+      </>
+  );
+};
+
+export default Home;
+

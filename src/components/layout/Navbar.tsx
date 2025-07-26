@@ -21,7 +21,7 @@ const Navbar = () => {
     >
       <div>
         <Link href={`/`}>
-          {/* <Image alt="logo" width={56} height={56} src={logo} /> */}
+          <Image alt="logo" width={56} height={56} src={logo} />
         </Link>
       </div>
       <div className="flex justify-center sm:justify-between items-center sm:gap-24">
