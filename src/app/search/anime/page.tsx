@@ -5,7 +5,7 @@ import Tag from "@/components/search/tag/Tag";
 
 type SearchParams = {
   Search?: string;
-  Genres?: string;
+  Categories?: string;
   Year?: string;
   Season?: string;
   Format?: string;
@@ -18,7 +18,7 @@ type SearchPageProps = {
 
 const SearchPage = async ({ searchParams }: SearchPageProps) => {
   const search = searchParams.Search;
-  const genres = searchParams.Genres;
+  const categories = searchParams.Categories;
   const year = searchParams.Year;
   const airing = searchParams["Airing Status"];
   const season = searchParams.Season;
@@ -26,7 +26,7 @@ const SearchPage = async ({ searchParams }: SearchPageProps) => {
 
   const queryParams = {
     Search: search || "",
-    Genres: genres || "",
+    Categories: categories || "",
     Year: year || "",
     ["Airing Status"]: airing || "",
     Format: format || "",
@@ -39,8 +39,8 @@ const SearchPage = async ({ searchParams }: SearchPageProps) => {
     if (queryParams.Search) {
       filters += `&filter[text]=${queryParams.Search}`;
     }
-    if (queryParams.Genres) {
-      filters += `&filter[categories]=${queryParams.Genres}`;
+    if (queryParams.Categories) {
+      filters += `&filter[categories]=${queryParams.Categories}`;
     }
     if (queryParams.Year) {
       filters += `&filter[year]=${queryParams.Year}`;

@@ -1,6 +1,6 @@
 
 
-export const FILTER_KEYS = ["Search", "Genres", "Year", "Airing Status", "Format", "Season"];
+export const FILTER_KEYS = ["Search", "Categories", "Year", "Airing Status", "Format", "Season"];
 
 export const YEARS = [
     1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995,
@@ -13,7 +13,7 @@ export const FORMAT = ["tv", "movie", "special", "ova", "ona", "music"];
   
 export const STATUS = ["finished", "current", "unreleased", "tba"];
   
-export const GENRES = ['Action', 'Adventure', 'Comedy', 'Drama', 'Ecchi', 'Fantasy', 'Horror', 'Mahou Shoujo', 'Mecha', 'Music', 'Mistery', 'Psychological', 'Romance']
+export const CATEGORIES = ['Action', 'Adventure', 'Comedy', 'Drama', 'Ecchi', 'Fantasy', 'Horror', 'Mahou Shoujo', 'Mecha', 'Music', 'Mistery', 'Psychological', 'Romance']
   
 export const SEASON = ['All', 'Spring', 'Summer', 'Fall', 'Winter']
 

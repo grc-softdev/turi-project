@@ -8,7 +8,7 @@ const AnimeContainer = () => {
   const { isLoading, rowsData } = useAnimes()
   return (
     <>
-      {(isLoading ? Array(3).fill(null) : rowsData)?.map((row, index) => (
+      {(isLoading ? Array(3).fill(null) : rowsData.slice(1))?.map((row, index) => (
         <div
           key={index}
           className="group items-center justify-center flex flex-wrap 2xl:px-24 mt-16 grid-cols-1 gap-2 ml-90"

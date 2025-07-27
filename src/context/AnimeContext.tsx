@@ -92,7 +92,7 @@ export const AnimesProvider = ({ children }: { children: ReactNode }) => {
 
   const queryParams = {
     Search: params.get("Search") || "",
-    Genres: params.get("Genres") || "",
+    Categories: params.get("Categories") || "",
     Year: params.get("Year") || "",
     ["Airing Status"]: params.get("Airing Status") || "",
     Format: params.get("Format") || "",

@@ -1,7 +1,7 @@
 "use client";
 import DropdownContainer from "./DropdownContainer";
 import React, { useEffect, useRef, useState } from "react";
-import { FORMAT, GENRES, STATUS, YEARS } from "../../../utilities/Data";
+import { CATEGORIES, FORMAT, STATUS, YEARS } from "../../../utilities/Data";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { useDebounce } from "@/hooks/useDebounce";
@@ -32,7 +32,7 @@ const Filter = ({ category, placeholder}: FilterProps) => {
   };
 
   const mapCategoryIntoContents = (categoryString: string) => {
-    if (categoryString === "Genres") return GENRES;
+    if (categoryString === "Categories") return CATEGORIES;
 
     if (categoryString === "Year") {
       return YEARS;
@@ -168,4 +168,5 @@ const Filter = ({ category, placeholder}: FilterProps) => {
 };
 
 export default Filter;
+
 

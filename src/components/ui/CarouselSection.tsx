@@ -14,32 +14,51 @@ const CarouselSection = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 6,
     slidesToScroll: 1,
     arrows: true,
-    prevArrow: <ChevronLeft sx={{ color: "#8ba0b2", fontSize: 40 }} />,
-    nextArrow: <ChevronRight sx={{ color: "#8ba0b2", fontSize: 40 }} />,
+    prevArrow: <ChevronLeft sx={{
+      color: "#8ba0b2",
+      fontSize: 40,
+      "&:hover": {
+        color: "#7A858F", 
+      },
+    }} />,
+    nextArrow: <ChevronRight 
+    sx={{
+      color: "#8ba0b2",
+      fontSize: 40,
+      "&:hover": {
+        color: "#7A858F", 
+      },
+    }} />,
     responsive: [
       {
-        breakpoint: 1280, // xl
+        breakpoint: 1536,
+        settings: {
+          slidesToShow: 6,
+        },
+      },
+      {
+        breakpoint: 1280,
         settings: {
           slidesToShow: 5,
         },
       },
       {
-        breakpoint: 1024, // lg
+        breakpoint: 1024,
         settings: {
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 768, // md
+        breakpoint: 768,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 640, // sm
+        breakpoint: 640,
         settings: {
           slidesToShow: 2,
         },
@@ -56,11 +75,15 @@ const CarouselSection = () => {
   return (
     <>
       {(isLoading ? Array(3).fill(null) : rowsData)?.slice(0,1)?.map((row, index) => (
-        <Container key={index} maxWidth="xl" sx={{ mt: 40 }} >
-          <div className="flex flex-col">
-            <Typography variant="h6" className="ml-3 font-medium">
-              {row?.title || "Loading..."}
-            </Typography>
+        <div
+        key={index}
+        className="group items-center justify-center flex flex-wrap 2xl:px-24 mt-16 grid-cols-1 gap-2 ml-90 bg-[#FAfafa]"
+      >
+        <Container key={index}>
+          <div className="flex flex-col xl:mx-12">
+          <h2 className="text-txtcatg text-wrap text-xl ml-3 sm:-mb-5 font-medium mt-8">
+              {row?.title}
+            </h2>
 
             <Link href={`/search/anime?`}>
               <span className="flex cursor-pointer justify-end mr-6 text-sm text-viewall hover:text-txtcard">
@@ -68,7 +91,7 @@ const CarouselSection = () => {
               </span>
             </Link>
 
-            <div className="mt-4">
+            
               <Slider {...settings}>
                 {(isLoading ? Array(12).fill(null) : row?.data?.slice(0, 12))?.map(
                   (anime, idx) =>
@@ -88,9 +111,10 @@ const CarouselSection = () => {
                     )
                 )}
               </Slider>
-            </div>
+           
           </div>
         </Container>
+        </div>
       ))}
     </>
   );
