@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import QueryProvider from "./query-provider";
 import { AnimesProvider } from "@/context/AnimeContext";
 import Footer from "@/components/layout/Footer";
+import RootProviders from "@/components/container/RootProvider";
 
 const overpass = Overpass({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -29,12 +30,14 @@ export default function RootLayout({
         className={`${overpass.className} ${roboto.className}`}
         style={{ backgroundColor: "#EDF1F5" }}
       >
+        <RootProviders>
         <QueryProvider>
           <AnimesProvider>
             {children}
             <Footer />
           </AnimesProvider>
         </QueryProvider>
+        </RootProviders>
       </body>
     </html>
   );

@@ -54,7 +54,7 @@ async function fetchRows(): Promise<RowsData> {
   const [trendingRes, popularRes, upcomingRes, allTimeRes] = await Promise.all([
     fetch("https://kitsu.io/api/edge/trending/anime?limit=40"),
     fetch("https://kitsu.io/api/edge/anime?filter%5Bstatus%5D=current&page%5Blimit%5D=6&sort=-user_count"),
-    fetch("https://kitsu.io/api/edge/anime?filter%5Bstatus%5D=upcoming&page%5Blimit%5D=6&sort=-user_count"),
+    fetch("https://kitsu.io/api/edge/anime?page%5Blimit%5D=6&sort=-averageRating"),
     fetch("https://kitsu.io/api/edge/trending/manga?page[limit]=0&sort=-canonicalTitle"),
   ]);
 
@@ -75,7 +75,7 @@ async function fetchRows(): Promise<RowsData> {
       data: popular.data,
     },
     {
-      title: "Upcoming Next Season",
+      title: "Highest Rated Anime",
       data: upcoming.data,
     },
     {
