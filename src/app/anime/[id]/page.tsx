@@ -17,6 +17,7 @@ const AnimePage = async ({ params }: AnimeProps) => {
   const cover =
     anime.data.attributes.coverImage.original ||
     anime.data.attributes.coverImage;
+  const trailer = anime.data.attributes.youtubeVideoId;
 
   return (
     <>
@@ -85,7 +86,7 @@ const AnimePage = async ({ params }: AnimeProps) => {
           </div>
         </div>
 
-        <div className="flex lg:h-[481px] ml-2 sm:ml-4 md:ml-2 lg:ml-[16px] xl:ml-[190px] 2xl:ml-[226px] lg:mb-16 xl:mb-36 mt-4 py-4 p-[18px]">
+        <div className="flex flex-col sm:flex-row lg:h-[481px] sm:ml-4 md:ml-2 lg:ml-[16px] xl:ml-[190px] 2xl:ml-[226px] lg:mb-16 xl:mb-36 mt-4 py-4 p-[18px]">
           <div className="bg-white lg:ml-12 p-[18px] w-full sm:h-[470px] xl:h-[570px] md:w-[215px]">
             <SectionAnimeId
               title={"English"}
@@ -124,6 +125,19 @@ const AnimePage = async ({ params }: AnimeProps) => {
               span={anime.data.attributes.ageRating}
             />
           </div>
+          {trailer ? (
+              <div className="mt-6 sm:ml-4 md:ml-16 lg:ml-36 2xl:ml-72 w-full max-w-[640px] h-[360px]">
+                <iframe
+                  className="w-full h-full rounded-lg shadow-lg"
+                  src={`https://www.youtube.com/embed/${trailer}`}
+                  title="Anime Trailer"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) : (
+              <p className="text-sm text-gray-500">Trailer unavailable.</p>
+            )}
         </div>
       </div>
     </>
