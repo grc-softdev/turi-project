@@ -1,7 +1,6 @@
-import Filters from "@/components/search/filters/Filters";
-import FiltersResult from "@/components/search/filters/FiltersResult";
-import Navbar from "@/components/layout/Navbar";
-import Tag from "@/components/search/tag/Tag";
+import dynamic from "next/dynamic";
+
+const SearchPageClient = dynamic(() => import("./SearchPageClient"), { ssr: false });
 
 type SearchParams = {
   Search?: string;
@@ -10,6 +9,7 @@ type SearchParams = {
   Season?: string;
   Format?: string;
   "Airing Status"?: string;
+  Page?: string;
 };
 
 type SearchPageProps = {
@@ -17,59 +17,34 @@ type SearchPageProps = {
 };
 
 const SearchPage = async ({ searchParams }: SearchPageProps) => {
-  const search = searchParams.Search;
-  const categories = searchParams.Categories;
-  const year = searchParams.Year;
-  const airing = searchParams["Airing Status"];
-  const season = searchParams.Season;
-  const format = searchParams.Format;
+  const search = searchParams.Search || "";
+  const categories = searchParams.Categories || "";
+  const year = searchParams.Year || "";
+  const airing = searchParams["Airing Status"] || "";
+  const season = searchParams.Season || "";
+  const format = searchParams.Format || "";
+  const page = parseInt(searchParams.Page || "1", 10);
 
-  const queryParams = {
-    Search: search || "",
-    Categories: categories || "",
-    Year: year || "",
-    ["Airing Status"]: airing || "",
-    Format: format || "",
-    Season: season || "",
-  };
+  const limit = 10;
+  const offset = (page - 1) * limit;
+  let filters = `page[limit]=${limit}&page[offset]=${offset}`;
 
-  const handleFetch = async () => {
-    let filters = "";
+  if (search) filters += `&filter[text]=${search}`;
+  if (categories) filters += `&filter[categories]=${categories}`;
+  if (year) filters += `&filter[year]=${year}`;
+  if (airing) filters += `&filter[status]=${airing}`;
+  if (format) filters += `&filter[subtype]=${format}`;
+  if (season) filters += `&filter%5Bseason%5D=${season}`;
 
-    if (queryParams.Search) {
-      filters += `&filter[text]=${queryParams.Search}`;
-    }
-    if (queryParams.Categories) {
-      filters += `&filter[categories]=${queryParams.Categories}`;
-    }
-    if (queryParams.Year) {
-      filters += `&filter[year]=${queryParams.Year}`;
-    }
-    if (queryParams["Airing Status"]) {
-      filters += `&filter[status]=${queryParams["Airing Status"]}`;
-    }
-    if (queryParams.Format) {
-      filters += `&filter[subtype]=${queryParams.Format}`;
-    }
-    if (queryParams.Season) {
-      filters += `&filter%5Bseason%5D=${queryParams.Season}`;
-    }
-
-    const res = await fetch(`https://kitsu.io/api/edge/anime?${filters}`);
-    return await res.json();
-  };
-
-  const results = await handleFetch();
+  const res = await fetch(`https://kitsu.io/api/edge/anime?${filters}`);
+  const results = await res.json();
 
   return (
-    <>
-      <Navbar/>
-      <div className="mx-0">
-      <Filters/>
-      <Tag/>
-      </div>
-      <FiltersResult results={results}/>
-    </>
+    <SearchPageClient
+      results={results}
+      currentPage={page}
+      totalCount={results.meta.count}
+    />
   );
 };
 

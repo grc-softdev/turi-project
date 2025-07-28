@@ -2,9 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 import Skeleton from "@mui/material/Skeleton";
 import Link from "next/link";
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import Card from "./Card";
-import { useAnimes } from "@/context/AnimeContext";
+import { Anime, useAnimes } from "@/context/AnimeContext";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
 const CarouselSection = () => {
@@ -81,7 +81,7 @@ const CarouselSection = () => {
       >
         <Container key={index}>
           <div className="flex flex-col xl:mx-12">
-          <h2 className="text-txtcatg text-wrap text-xl ml-3 sm:-mb-5 font-medium mt-8">
+          <h2 className="text-bglanding text-wrap text-xl ml-3 sm:-mb-5 font-medium mt-8">
               {row?.title}
             </h2>
 
@@ -93,7 +93,7 @@ const CarouselSection = () => {
 
             
               <Slider {...settings}>
-                {(isLoading ? Array(12).fill(null) : row?.data?.slice(0, 12))?.map(
+                {(isLoading ? Array(20).fill(null) : row?.data?.slice(0, 20) as Anime[])?.map(
                   (anime, idx) =>
                     isLoading ? (
                       <div key={idx} className="px-2">
