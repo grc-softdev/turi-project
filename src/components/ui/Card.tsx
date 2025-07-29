@@ -41,7 +41,8 @@ const Card = ({ anime }: CardProps) => {
       />
 
       <div className="p-4 max-w-6xl mx-auto">
-        <Link href={`/anime/${anime.id}`}>
+      <Link href={`/anime/${anime.id}?type=${anime.type}`}>
+
           <div className="flex flex-col">
             <Image
               className="h-full mb-3 rounded-sm shadow-txtcatg shadow-sm"

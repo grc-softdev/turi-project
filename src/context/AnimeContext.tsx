@@ -17,6 +17,7 @@ type AnimeContextType = {
 
 export type Anime = {
   id: string;
+  type: string;
   attributes: {
     titles: {
       en: string;

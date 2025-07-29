@@ -11,11 +11,15 @@ type AnimeProps = {
   params: {
     id: string;
   };
+  searchParams: {
+    type?: "anime" | "manga";
+  };
 };
 
-const AnimePage = async ({ params }: AnimeProps) => {
+const AnimePage = async ({ params, searchParams }: AnimeProps) => {
   const animeId = params.id;
-  const res = await fetch(`https://kitsu.io/api/edge/anime/${animeId}`);
+  const type = searchParams.type || "anime";
+  const res = await fetch(`https://kitsu.io/api/edge/${type}/${animeId}`);
   const anime = await res.json();
   if (!res.ok) return notFound();
 

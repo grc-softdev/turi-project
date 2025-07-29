@@ -64,7 +64,7 @@ export default function AnimeDescription({ originalDescription, animeTitle }: Pr
   <path d="M16.24 7.76l2.12-2.12" />
 </svg>
 
-          {loading ? "loading..." : "improve description"}
+          {loading ? "loading..." : "AI Generated description"}
         </Button>
       </div>
     </div>

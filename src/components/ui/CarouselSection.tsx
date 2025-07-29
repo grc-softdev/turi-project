@@ -87,7 +87,7 @@ const CarouselSection = () => {
 
             <Link href={`/search/anime?`}>
               <span className="flex cursor-pointer justify-end mr-6 text-sm text-viewall hover:text-txtcard">
-                View all
+                view all
               </span>
             </Link>
 
