@@ -28,9 +28,9 @@ O objetivo é demonstrar habilidades modernas de desenvolvimento frontend com Re
     <img src="public/screenshots/animeId.png" alt="Detalhes de um anime" width="400px" />
     
   <figure style="display:inline-block; margin:10px;">
-    figcaption align="center"><strong>Resultados de Busca</strong></figcaption>
+    <figcaption align="center"><strong>Resultados de Busca</strong></figcaption>
     <img src="public/screenshots/paginacao.png" alt="Página de busca com resultados filtrados" width="400px" />
-    <
+    
   </figure>
 </p>
 
