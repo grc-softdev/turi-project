@@ -3,6 +3,7 @@ import SectionAnimeId from "../../../components/container/SectionAnimeId";
 import Image from "next/image";
 import React from "react";
 import CustomTooltip from "@/components/container/CustomTooltipWrapper";
+import AnimeDescription from "@/components/ui/AnimeDescription";
 
 type AnimeProps = {
   params: {
@@ -80,9 +81,10 @@ const AnimePage = async ({ params }: AnimeProps) => {
             <h3 className="lg:mt-4 md:mt-4 mt-[114px] sm:mt-28 md:ml-4 xl:mt-8 text-xl ml-0 mb-2">
               {anime.data.attributes.titles.en_jp}
             </h3>
-            <p className="flex leading-6 text-[15px] md:ml-0 sm:mr-0 md:mr-4 xl:mr-12 2xl:mr-52 sm:pl-2 md:pl-4 lg:pl-0  md:max-h-[465px] lg:max-h-[350px] xl:max-h-[300px]">
-              {anime.data.attributes.description}
-            </p>
+            <AnimeDescription
+              originalDescription={anime.data.attributes.description}
+              animeTitle={anime.data.attributes.titles.en_jp}
+            />
           </div>
         </div>
 
@@ -126,18 +128,18 @@ const AnimePage = async ({ params }: AnimeProps) => {
             />
           </div>
           {trailer ? (
-              <div className="mt-6 sm:ml-4 md:ml-16 lg:ml-36 2xl:ml-72 w-full max-w-[640px] h-[360px]">
-                <iframe
-                  className="w-full h-full rounded-lg shadow-lg"
-                  src={`https://www.youtube.com/embed/${trailer}`}
-                  title="Anime Trailer"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            ) : (
-              <p className="text-sm text-gray-500">Trailer unavailable.</p>
-            )}
+            <div className="mt-6 sm:ml-4 md:ml-16 lg:ml-36 2xl:ml-72 w-full max-w-[640px] h-[360px]">
+              <iframe
+                className="w-full h-full rounded-lg shadow-lg"
+                src={`https://www.youtube.com/embed/${trailer}`}
+                title="Anime Trailer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ) : (
+            <p className="text-sm text-gray-500">Trailer unavailable.</p>
+          )}
         </div>
       </div>
     </>
