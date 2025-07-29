@@ -2,7 +2,7 @@
 
 <h3>Descrição</h3>
 
-Esse é um projeto *take-home* construído com [React](https://reactjs.org/) e Context API, inspirado na plataforma da comunidade de animes [AniList](https://anilist.co/), utilizando a API do [Kitsu](https://kitsu.docs.apiary.io/).
+Esse é um projeto *take-home* construído com [React](https://reactjs.org/) e Context API, inspirado na plataforma da comunidade de animes [AniList](https://anilist.co/), utilizando a API pública do [Kitsu](https://kitsu.docs.apiary.io/).
 
 O objetivo é demonstrar habilidades modernas de desenvolvimento frontend com React, implementando todos os requisitos solicitados:
 
@@ -31,6 +31,29 @@ O objetivo é demonstrar habilidades modernas de desenvolvimento frontend com Re
   </figure>
 </p>
 ---
+
+🧠 Tecnologias e Ferramentas Utilizadas
+React
+
+Context API para gerenciamento de estado global
+
+React Query para fetch e cache eficiente dos dados da API
+
+Material UI
+
+Componente de carrossel
+
+Skeletons para carregamento
+
+Botões estilizados
+
+Tailwind CSS para estilização e responsividade
+
+OpenAI (GPT) para reescrita de descrições de animes de forma mais fluida e personalizada
+
+Kitsu API como fonte dos dados
+
+
 
 ## 🚀 Como rodar o projeto localmente
 
