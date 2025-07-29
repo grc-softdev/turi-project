@@ -18,10 +18,10 @@ O objetivo é demonstrar habilidades modernas de desenvolvimento frontend com Re
 
 <p align="center">
   <figure style="display:inline-block; margin:10px;">
-    <figcaption align="center"><strong>Página Inicial</strong></figcaption>
+    <figcaption align="center"><strong>Carrossel</strong></figcaption>
     <img src="public/screenshots/carousel.png" alt="Página inicial com carrossel" width="400px" />
-    
   </figure>
+  
   <figure style="display:inline-block; margin:10px;">
     <figcaption align="center"><strong>Detalhes do Anime</strong></figcaption>
   </figure>
