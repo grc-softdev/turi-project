@@ -2,7 +2,7 @@
 
 <h3>Descrição</h3>
 
-Aniland é um projeto *take-home* construído com [React](https://reactjs.org/) e Context API, inspirado na plataforma da comunidade de animes [AniList](https://anilist.co/), utilizando a API do [Kitsu](https://kitsu.docs.apiary.io/).
+Esse é um projeto *take-home* construído com [React](https://reactjs.org/) e Context API, inspirado na plataforma da comunidade de animes [AniList](https://anilist.co/), utilizando a API do [Kitsu](https://kitsu.docs.apiary.io/).
 
 O objetivo é demonstrar habilidades modernas de desenvolvimento frontend com React, implementando todos os requisitos solicitados:
 
