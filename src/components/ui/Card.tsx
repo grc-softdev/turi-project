@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import notfound from "@/assets/notfound.jpg"
 import Link from "next/link";
 import Badge from "./Badge";
 import { useMemo, useState } from "react";
@@ -47,7 +48,7 @@ const Card = ({ anime }: CardProps) => {
               height={265}
               width={185}
               alt="poster"
-              src={poster}
+              src={poster|| notfound}
               style={{ height: "265 px", width: "185 px" }}
             />
             <div

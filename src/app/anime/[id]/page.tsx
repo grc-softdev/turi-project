@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+import notfound from "@/assets/notfound.jpg";
 import Navbar from "@/components/layout/Navbar";
 import SectionAnimeId from "../../../components/container/SectionAnimeId";
 import Image from "next/image";
@@ -15,8 +17,10 @@ const AnimePage = async ({ params }: AnimeProps) => {
   const animeId = params.id;
   const res = await fetch(`https://kitsu.io/api/edge/anime/${animeId}`);
   const anime = await res.json();
+  if (!res.ok) return notFound();
+
   const cover =
-    anime.data.attributes.coverImage.original ||
+    anime.data.attributes.coverImage?.original ||
     anime.data.attributes.coverImage;
   const trailer = anime.data.attributes.youtubeVideoId;
 
@@ -26,7 +30,7 @@ const AnimePage = async ({ params }: AnimeProps) => {
         <div className="sm:w-full sm:h-full z-10 relative shadow-sdcover sm:bg-cover bg-repeat bg-center">
           <Navbar />
           <div className="w-full h-[210px] sm:h-[210px] md:h-[400px] lg:h-[400px] xl:h-[344px] sm:w-[100%] -mt-[75px] -z-10 relative">
-            <Image src={cover} className="object-cover" fill alt="cover" />
+            <Image src={cover|| notfound} className="object-cover" fill alt="cover" />
           </div>
         </div>
 
@@ -37,7 +41,7 @@ const AnimePage = async ({ params }: AnimeProps) => {
                 src={
                   anime.data.attributes.posterImage.small ||
                   anime.data.attributes.posterImage.large ||
-                  anime.data.attributes.posterImage.tiny
+                  anime.data.attributes.posterImage.tiny || notfound
                 }
                 className="object-contain"
                 alt="image-small"
