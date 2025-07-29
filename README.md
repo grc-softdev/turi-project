@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1>Turivius Project - Aniland 🎌</h1>
 
-## Getting Started
+<h3>Descrição</h3>
 
-First, run the development server:
+Aniland é um projeto *take-home* construído com [React](https://reactjs.org/) e Context API, inspirado na plataforma da comunidade de animes [AniList](https://anilist.co/), utilizando a API do [Kitsu](https://kitsu.docs.apiary.io/).
+
+O objetivo é demonstrar habilidades modernas de desenvolvimento frontend com React, implementando todos os requisitos solicitados:
+
+✅ Página inicial com carrossel de destaques e categorias  
+✅ Link "Ver todos" direcionando para listagem completa  
+✅ Página de listagem paginada de animes  
+✅ Página de busca com resultados dinâmicos  
+✅ Página de detalhes com informações completas e trailer (quando disponível)  
+✅ Página por categoria exibindo todos os animes relacionados  
+✅ Consumo da API do Kitsu com integração de dados
+
+👉 [Acesse o projeto ao vivo](https://aniland.vercel.app/)
+
+<p align="center">
+  <figure style="display:inline-block; margin:10px;">
+    <img src="public/screenshots/carousel.png" alt="Página inicial com carrossel" width="400px" />
+    <figcaption align="center"><strong>Página Inicial</strong></figcaption>
+  </figure>
+  <figure style="display:inline-block; margin:10px;">
+    <img src="public/screenshots/animeId.png" alt="Detalhes de um anime" width="400px" />
+    <figcaption align="center"><strong>Detalhes do Anime</strong></figcaption>
+  </figure>
+  <figure style="display:inline-block; margin:10px;">
+    <img src="public/screenshots/pagination.png" alt="Página de busca com resultados filtrados" width="400px" />
+    <figcaption align="center"><strong>Resultados de Busca</strong></figcaption>
+  </figure>
+</p>
+---
+
+## 🚀 Como rodar o projeto localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Depois, acesse: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<h2>Technical Notes</h2>
 
-## Learn More
+<h2>🛠 Notas Técnicas</h2>
+Gerenciamento de estado com Context API e custom hooks
 
-To learn more about Next.js, take a look at the following resources:
+Layout construído com Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Componentes e interações com Material UI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Boas práticas com componentes reutilizáveis e estrutura modular
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<h2>📌 Pontos de Melhoria</h2>
+A arquitetura geral pode ser aprimorada para melhor escalabilidade e organização.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Algumas chamadas à API são redundantes, como na Home, onde os dados já estão armazenados no Context. Isso poderia ser evitado com memoização ou cache mais eficiente.
+
+Uma separação mais clara entre lógica de UI e lógica de dados (ex: dividir melhor camadas de domínio e apresentação) poderia trazer mais clareza.
+
+
