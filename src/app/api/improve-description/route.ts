@@ -8,7 +8,7 @@ const openai = new OpenAI({
 export async function POST(req: Request) {
   const { description } = await req.json();
 
-  const prompt = `Rewrite the following anime description in a more engaging and clear way, keeping the original meaning. Add a very light spoiler (nothing major), and make the tone slightly humorous:\n\nDescription:\n${description}`;
+  const prompt = `Rewrite the following anime description in a short, funny, and easy-to-read way. Include a small spoiler to tease the story, but don't ruin the plot:\n\n${description}`;
 
   const completion = await openai.chat.completions.create({
     messages: [{ role: "user", content: prompt }],

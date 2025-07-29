@@ -30,7 +30,7 @@ const AnimePage = async ({ params }: AnimeProps) => {
           </div>
         </div>
 
-        <div className="flex justify-between bg-white md:h-[465px] lg:h-[340px] xl:h-[300px]">
+        <div className="flex justify-between bg-white py-4 ">
           <div className="">
             <div className="lg:w-[215px] lg:h-[304px] sm:ml-6 md:ml-8 lg:ml-[80px] xl:ml-[260px] 2xl:ml-72 ml-4 z-40 w-[100px] h-[141px] sm:w-[100px] sm:h-[141px] -mt-[100px] sm:-mt-[100px]  md:-mt-[84px] xl:-mt-[114px] md:w-[215px] md:h-[304px] relative">
               <Image

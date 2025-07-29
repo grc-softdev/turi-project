@@ -30,12 +30,12 @@ export default function AnimeDescription({ originalDescription, animeTitle }: Pr
   };
 
   return (
-    <div>
+    <div className="mb-4">
     <div className="max-h-60 overflow-y-auto pr-2">
       <p className="text-[15px] leading-6 ">{description}</p>
     </div>
-    <div className="mt-4 mb-2">
-    <Button onClick={handleImprove} disabled={loading} variant="outlined" sx={{ mt: 2 }}>
+    <div className="mt-2 mb-2">
+    <Button onClick={handleImprove} disabled={loading} variant="outlined" sx={{ mt: 2, mb: 2 }}>
         {loading ? "loading..." : "improve description"}
       </Button>
       </div>
