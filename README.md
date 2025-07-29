@@ -1,4 +1,4 @@
-<h1>Turivius Project - Aniland 🎌</h1>
+<h1>Turivius Project</h1>
 
 <h3>Descrição</h3>
 
