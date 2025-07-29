@@ -14,44 +14,47 @@ O objetivo é demonstrar habilidades modernas de desenvolvimento frontend com Re
 ✅ Página por categoria exibindo todos os animes relacionados  
 ✅ Consumo da API do Kitsu com integração de dados
 
-👉 [Acesse o projeto ao vivo](https://aniland.vercel.app/)
+👉 [Acesse o projeto ao vivo](https://turi-project.vercel.app/)
 
 <p align="center">
   <figure style="display:inline-block; margin:10px;">
-    <img src="public/screenshots/carousel.png" alt="Página inicial com carrossel" width="400px" />
     <figcaption align="center"><strong>Página Inicial</strong></figcaption>
+    <img src="public/screenshots/carousel.png" alt="Página inicial com carrossel" width="400px" />
+    
   </figure>
   <figure style="display:inline-block; margin:10px;">
-    <img src="public/screenshots/animeId.png" alt="Detalhes de um anime" width="400px" />
     <figcaption align="center"><strong>Detalhes do Anime</strong></figcaption>
   </figure>
+    <img src="public/screenshots/animeId.png" alt="Detalhes de um anime" width="400px" />
+    
   <figure style="display:inline-block; margin:10px;">
-    <img src="public/screenshots/pagination.png" alt="Página de busca com resultados filtrados" width="400px" />
-    <figcaption align="center"><strong>Resultados de Busca</strong></figcaption>
+    figcaption align="center"><strong>Resultados de Busca</strong></figcaption>
+    <img src="public/screenshots/paginacao.png" alt="Página de busca com resultados filtrados" width="400px" />
+    <
   </figure>
 </p>
+
 ---
 
-🧠 Tecnologias e Ferramentas Utilizadas
-React
+## Highlights
 
-Context API para gerenciamento de estado global
+- OpenAI (GPT) para reescrita de descrições de animes de forma mais fluida e personalizada
 
-React Query para fetch e cache eficiente dos dados da API
+- Context API para gerenciamento de estado global
 
-Material UI
+- React Query para fetch e cache eficiente dos dados da API
 
-Componente de carrossel
+- Material UI
 
-Skeletons para carregamento
+- Componente de carrossel
 
-Botões estilizados
+- Skeletons para carregamento
 
-Tailwind CSS para estilização e responsividade
+- Botões estilizados
 
-OpenAI (GPT) para reescrita de descrições de animes de forma mais fluida e personalizada
+- Tailwind CSS para estilização e responsividade
 
-Kitsu API como fonte dos dados
+- Kitsu API como fonte dos dados
 
 
 
@@ -62,26 +65,22 @@ npm install
 npm run dev
 ```
 
+## Environment Variables
+
+Crie um arquivo `.env` com a seguinte variável:
+```bash
+OPENAI_API_KEY=
+```
+
+
 Depois, acesse: http://localhost:3000
 
 
-<h2>Technical Notes</h2>
-
-<h2>🛠 Notas Técnicas</h2>
-Gerenciamento de estado com Context API e custom hooks
-
-Layout construído com Tailwind CSS
-
-Componentes e interações com Material UI
-
-Boas práticas com componentes reutilizáveis e estrutura modular
-
-
 <h2>📌 Pontos de Melhoria</h2>
-A arquitetura geral pode ser aprimorada para melhor escalabilidade e organização.
+- O código pode ser refatorado, eliminando componentes que se tornaram desnecessários, como parte do Context.
 
-Algumas chamadas à API são redundantes, como na Home, onde os dados já estão armazenados no Context. Isso poderia ser evitado com memoização ou cache mais eficiente.
+- Algumas chamadas à API são redundantes e podem ser otimizadas.
 
-Uma separação mais clara entre lógica de UI e lógica de dados (ex: dividir melhor camadas de domínio e apresentação) poderia trazer mais clareza.
+- A experiência do usuário pode ser melhorada com ajustes de animações (ex: dropdowns).
 
 
