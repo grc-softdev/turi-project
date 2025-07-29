@@ -3,10 +3,10 @@ import { Overpass, Roboto } from "next/font/google";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import QueryProvider from "./query-provider";
 import { AnimesProvider } from "@/context/AnimeContext";
 import Footer from "@/components/layout/Footer";
 import RootProviders from "@/components/container/RootProvider";
+import QueryProvider from "@/store/query-provider";
 
 const overpass = Overpass({ subsets: ["latin"] });
 const roboto = Roboto({

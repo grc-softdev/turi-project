@@ -97,7 +97,7 @@ const AnimePage = async ({ params, searchParams }: AnimeProps) => {
         </div>
 
         <div className="flex flex-col sm:flex-row lg:h-[481px] sm:ml-4 md:ml-2 lg:ml-[16px] xl:ml-[190px] 2xl:ml-[226px] lg:mb-16 xl:mb-36 mt-4 py-4 p-[18px]">
-          <div className="bg-white lg:ml-12 p-[18px] w-full sm:h-[470px] xl:h-[570px] md:w-[215px]">
+          <div className="bg-white lg:ml-12 p-[18px] w-full sm:h-[470px] xl:h-[570px] md:w-[215px] overflow-y-auto">
             <SectionAnimeId
               title={"English"}
               span={anime.data.attributes.titles.en_jp}
